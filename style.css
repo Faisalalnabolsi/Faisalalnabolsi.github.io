@@ -8,7 +8,7 @@
 
   --gap: 16px;
   --pad: 24px;
-  --w: min(100vw - 2 * var(--pad), 1100px); /* width of the grid */
+  --w: min(100vw - 2 * var(--pad), 1300px); /* width of the grid */
 }
 
 * { box-sizing: border-box; }
@@ -60,7 +60,7 @@ body::before {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* each row is exactly as tall as one square frame */
-  grid-auto-rows: calc((var(--w) - 2 * var(--gap)) / 4);
+  grid-auto-rows: calc((var(--w) - 3 * var(--gap)) / 4);
   grid-auto-flow: dense; /* fills gaps so no holes appear */
   gap: var(--gap);
 }
