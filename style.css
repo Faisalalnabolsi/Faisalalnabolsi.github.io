@@ -136,8 +136,8 @@ dialog img {
   :root { --pad: 16px; }
   .top { padding-top: 48px; }
   .grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .frame { aspect-ratio: 1; }
+  .frame { aspect-ratio: 4 / 5; }
   .wide, .banner { grid-column: auto; aspect-ratio: 2 / 1; }
-  .tall { grid-row: auto; aspect-ratio: 1 / 2; }
-  .big { grid-column: auto; grid-row: auto; aspect-ratio: 1; }
+  .tall { grid-row: auto; aspect-ratio: 2 / 5; }
+  .big { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 5; }
 }
