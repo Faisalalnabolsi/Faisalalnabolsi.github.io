@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Graphic Design Portfolio</title>
+  <!-- Stops search engines from listing the site. Delete this line if you want Google to find it. -->
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Your Name</h1>
+    <p>Graphic designer &middot; <a href="mailto:you@example.com">you@example.com</a></p>
+  </header>
+
+  <!--
+    HOW TO EDIT THE GRID
+    Each work is one <button class="frame ..."> block. Change the size by changing the class:
+      frame            = 1 square          (default)
+      frame wide       = 2 columns wide
+      frame tall       = 2 rows tall
+      frame big        = 2 columns wide and 2 rows tall
+      frame banner     = all 3 columns wide
+    To use your own image, change the file name in src="images/..." and the alt text.
+    Put the image files in a folder named "images" next to this file.
+    To add a work, copy one whole block and paste it where you want it.
+  -->
+  <main class="grid">
+    <button class="frame wide"><img src="images/work-1.jpg" alt="Describe work 1" onerror="this.parentElement.classList.add('empty')"></button>
+    <button class="frame"><img src="images/work-2.jpg" alt="Describe work 2" onerror="this.parentElement.classList.add('empty')"></button>
+
+    <button class="frame"><img src="images/work-3.gif" alt="Describe work 3" onerror="this.parentElement.classList.add('empty')"></button>
+    <button class="frame"><img src="images/work-4.jpg" alt="Describe work 4" onerror="this.parentElement.classList.add('empty')"></button>
+    <button class="frame"><img src="images/work-5.jpg" alt="Describe work 5" onerror="this.parentElement.classList.add('empty')"></button>
+
+    <button class="frame"><img src="images/work-6.jpg" alt="Describe work 6" onerror="this.parentElement.classList.add('empty')"></button>
+    <button class="frame wide"><img src="images/work-7.gif" alt="Describe work 7" onerror="this.parentElement.classList.add('empty')"></button>
+  </main>
+
+  <dialog id="viewer"><img alt=""></dialog>
+
+  <script>
+    // Click a work to see it full size. Click anywhere or press Esc to close.
+    const viewer = document.getElementById('viewer');
+    const viewerImg = viewer.querySelector('img');
+    document.querySelectorAll('.frame').forEach(frame => {
+      frame.addEventListener('click', () => {
+        if (frame.classList.contains('empty')) return;
+        const img = frame.querySelector('img');
+        viewerImg.src = img.src;
+        viewerImg.alt = img.alt;
+        viewer.showModal();
+      });
+    });
+    viewer.addEventListener('click', () => viewer.close());
+  </script>
+</body>
+</html>
