@@ -58,7 +58,7 @@ body::before {
   margin: 0 auto;
   padding-bottom: 80px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* each row is exactly as tall as one square frame */
   grid-auto-rows: calc((var(--w) - 2 * var(--gap)) / 3);
   grid-auto-flow: dense; /* fills gaps so no holes appear */
