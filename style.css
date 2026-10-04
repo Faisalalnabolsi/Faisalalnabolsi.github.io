@@ -141,3 +141,41 @@ dialog img {
   .tall { grid-row: auto; aspect-ratio: 2 / 5; }
   .big { grid-column: auto; grid-row: auto; aspect-ratio: 4 / 5; }
 }
+/* ---------- Header, filters, viewer additions ---------- */
+[hidden] { display: none !important; }
+
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; }
+.intro { min-width: 0; }
+.top .about { max-width: 60ch; margin: 18px 0 0; color: var(--muted); }
+
+.yt {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 14px 18px; text-align: center; text-decoration: none; color: var(--text);
+  border: 1px solid rgba(185, 162, 245, 0.18); border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04); font-size: 0.9rem;
+  transition: border-color 0.2s, transform 0.25s;
+}
+.yt svg { width: 44px; height: auto; }
+.yt:not([href]) { cursor: default; }
+.yt[href]:hover { border-color: rgba(185, 162, 245, 0.55); transform: scale(1.05); }
+
+.filters { width: var(--w); margin: 0 auto 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button {
+  font: inherit; font-size: 0.9rem; color: var(--muted); background: transparent;
+  border: 1px solid rgba(185, 162, 245, 0.25); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+}
+.filters button.on { color: var(--text); background: rgba(109, 40, 217, 0.45); border-color: var(--lavender); }
+
+.vbox { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+dialog img { max-height: 82vh; }
+.vcap { margin: 0; color: var(--muted); font-size: 0.9rem; text-align: center; }
+.vbtn {
+  position: absolute; z-index: 1; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; font-size: 1.6rem; line-height: 1; cursor: pointer;
+  color: var(--text); background: rgba(10, 6, 18, 0.7);
+}
+.vclose { top: 8px; right: 8px; }
+.vprev, .vnext { top: calc(50% - 30px); }
+.vprev { left: 8px; }
+.vnext { right: 8px; }
