@@ -1,0 +1,29 @@
+media:
+  input: images
+  output: /images
+  extensions: [jpg, jpeg, png, gif, webp]
+content:
+  - name: works
+    label: Portfolio works
+    type: file
+    path: works.json
+    format: json
+    list: true
+    fields:
+      - name: image
+        label: Image
+        type: image
+      - name: alt
+        label: Description
+        type: string
+      - name: size
+        label: Frame size
+        type: select
+        default: square
+        options:
+          values:
+            - { name: square, label: "Standard (1 frame)" }
+            - { name: wide, label: "Wide (2 columns)" }
+            - { name: tall, label: "Tall (2 rows)" }
+            - { name: big, label: "Big (2 columns, 2 rows)" }
+            - { name: banner, label: "Banner (full row)" }
