@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name – Graphic Design Portfolio</title>
+  <title>Portfolio</title>
   <!-- Stops search engines from listing the site. Delete this line if you want Google to find it. -->
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,55 +12,106 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Name, tagline, email, about text and the YouTube link are edited in Pages CMS ("Site info"). -->
   <header class="top">
-    <h1>Faisal AlNabolsi</h1>
-    <p>Motion & Graphic Designer &middot; <a href="mailto:you@example.com">Faisalalnabolsi@Gmail.com</a></p>
+    <div class="intro">
+      <h1 id="name">Your Name</h1>
+      <p><span id="tagline">Graphic designer</span> &middot; <a id="email" href="mailto:you@example.com">you@example.com</a></p>
+      <p id="about" class="about" hidden></p>
+    </div>
+    <a id="yt" class="yt">
+      <svg viewBox="0 0 64 45" aria-hidden="true"><rect width="64" height="45" rx="12" fill="#ff0033"/><path d="M26 13l17 9.5L26 32z" fill="#fff"/></svg>
+      <span id="ytlabel">Motion &amp; Animation Samples</span>
+    </a>
   </header>
 
-  <!-- The frames are created automatically from works.json (edited through Pages CMS). -->
+  <nav id="filters" class="filters" hidden></nav>
   <main class="grid" id="grid"></main>
 
-  <dialog id="viewer"><img alt=""></dialog>
+  <dialog id="viewer">
+    <div class="vbox">
+      <button class="vbtn vclose" id="vclose" aria-label="Close">&times;</button>
+      <button class="vbtn vprev" id="vprev" aria-label="Previous image">&#8249;</button>
+      <img id="vimg" alt="">
+      <button class="vbtn vnext" id="vnext" aria-label="Next image">&#8250;</button>
+      <p class="vcap" id="vcap"></p>
+    </div>
+  </dialog>
 
   <script>
-    const grid = document.getElementById('grid');
-    const viewer = document.getElementById('viewer');
-    const viewerImg = viewer.querySelector('img');
-    const SIZES = ['wide', 'tall', 'big', 'banner']; // "square" needs no extra class
+    const $ = id => document.getElementById(id);
+    const load = f => fetch(f, { cache: 'no-cache' }).then(r => { if (!r.ok) throw 0; return r.json(); });
+    const SIZES = ['wide', 'tall', 'big', 'banner'];
 
-    fetch('works.json', { cache: 'no-cache' })
-      .then(res => {
-        if (!res.ok) throw new Error('works.json not found');
-        return res.json();
-      })
-      .then(works => {
-        works.forEach(work => {
-          const frame = document.createElement('button');
-          frame.className = 'frame' + (SIZES.includes(work.size) ? ' ' + work.size : '');
+    // ----- Site info -----
+    load('site.json').then(s => {
+      if (s.name) { $('name').textContent = s.name; document.title = s.name + ' – Portfolio'; }
+      if (s.tagline) $('tagline').textContent = s.tagline;
+      if (s.email) { $('email').textContent = s.email; $('email').href = 'mailto:' + s.email; }
+      if (s.about) { $('about').textContent = s.about; $('about').hidden = false; }
+      if (s.youtube_label) $('ytlabel').textContent = s.youtube_label;
+      if (s.youtube_url) { $('yt').href = s.youtube_url; $('yt').target = '_blank'; $('yt').rel = 'noopener'; }
+    }).catch(() => {});
 
-          const img = document.createElement('img');
-          img.alt = work.alt || '';
-          img.onerror = () => frame.classList.add('empty');
-          if (work.image) img.src = work.image;
-          else frame.classList.add('empty');
-          frame.appendChild(img);
+    // ----- Full-size viewer -----
+    const viewer = $('viewer'), vimg = $('vimg');
+    let cur = [], idx = 0;
+    function show(i) { idx = (i + cur.length) % cur.length; vimg.src = cur[idx]; }
+    function openViewer(w, imgs) {
+      cur = imgs;
+      vimg.alt = w.alt || '';
+      $('vcap').textContent = [w.alt, w.category, w.year].filter(Boolean).join(' · ');
+      $('vprev').hidden = $('vnext').hidden = imgs.length < 2;
+      show(0);
+      viewer.showModal();
+    }
+    vimg.onclick = () => cur.length > 1 ? show(idx + 1) : viewer.close();
+    $('vprev').onclick = () => show(idx - 1);
+    $('vnext').onclick = () => show(idx + 1);
+    $('vclose').onclick = () => viewer.close();
+    viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+    document.addEventListener('keydown', e => {
+      if (!viewer.open || cur.length < 2) return;
+      if (e.key === 'ArrowRight') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+    });
 
-          // Click a work to see it full size.
-          frame.addEventListener('click', () => {
-            if (frame.classList.contains('empty')) return;
-            viewerImg.src = img.src;
-            viewerImg.alt = img.alt;
-            viewer.showModal();
-          });
-
-          grid.appendChild(frame);
-        });
-      })
-      .catch(() => {
-        grid.innerHTML = '<p style="color:#a99fc0;grid-column:1/-1">Could not load the portfolio. If you opened this file directly from your computer, view it through your GitHub link instead.</p>';
+    // ----- Grid -----
+    const grid = $('grid');
+    load('works.json').then(works => {
+      works.forEach(w => {
+        const imgs = [w.image].concat(w.more_images || []).filter(Boolean);
+        const frame = document.createElement('button');
+        frame.className = 'frame' + (SIZES.includes(w.size) ? ' ' + w.size : '');
+        frame.dataset.category = w.category || '';
+        const img = document.createElement('img');
+        img.alt = w.alt || '';
+        img.onerror = () => frame.classList.add('empty');
+        if (imgs.length) img.src = imgs[0]; else frame.classList.add('empty');
+        frame.appendChild(img);
+        frame.onclick = () => { if (!frame.classList.contains('empty')) openViewer(w, imgs); };
+        grid.appendChild(frame);
       });
 
-    viewer.addEventListener('click', () => viewer.close());
+      // Category filter buttons (only shown if there are 2+ categories in use)
+      const cats = [...new Set(works.map(w => w.category).filter(Boolean))];
+      if (cats.length > 1) {
+        const nav = $('filters');
+        ['All', ...cats].forEach((c, i) => {
+          const b = document.createElement('button');
+          b.textContent = c;
+          if (i === 0) b.className = 'on';
+          b.onclick = () => {
+            nav.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+            grid.querySelectorAll('.frame').forEach(f => { f.hidden = i > 0 && f.dataset.category !== c; });
+          };
+          nav.appendChild(b);
+        });
+        nav.hidden = false;
+      }
+    }).catch(() => {
+      grid.innerHTML = '<p style="color:#a99fc0;grid-column:1/-1">Could not load the portfolio. If you opened this file from your computer, view it through your GitHub link instead.</p>';
+    });
   </script>
 </body>
 </html>
