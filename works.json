@@ -1,9 +1,45 @@
 [
-  { "image": "/images/work-1.jpg", "alt": "Describe work 1", "size": "wide" },
-  { "image": "/images/work-2.jpg", "alt": "Describe work 2", "size": "square" },
-  { "image": "/images/work-3.gif", "alt": "Describe work 3", "size": "square" },
-  { "image": "/images/work-4.jpg", "alt": "Describe work 4", "size": "square" },
-  { "image": "/images/work-5.jpg", "alt": "Describe work 5", "size": "square" },
-  { "image": "/images/work-6.jpg", "alt": "Describe work 6", "size": "square" },
-  { "image": "/images/work-7.gif", "alt": "Describe work 7", "size": "wide" }
+  {
+    "image": "/images/work-1.jpg",
+    "alt": "Describe work 1",
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-2.jpg",
+    "alt": "Describe work 2",
+    "size": "square"
+  },
+  {
+    "image": "/images/work-3.gif",
+    "alt": "Describe work 3",
+    "size": "square"
+  },
+  {
+    "image": "/images/work-4.jpg",
+    "alt": "Describe work 4",
+    "size": "square"
+  },
+  {
+    "image": "/images/work-5.jpg",
+    "alt": "Describe work 5",
+    "size": "square"
+  },
+  {
+    "image": "/images/work-6.jpg",
+    "alt": "Describe work 6",
+    "size": "square"
+  },
+  {
+    "image": "/images/work-7.gif",
+    "alt": "Describe work 7",
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-8-1.jpg",
+    "alt": "HellaCool",
+    "size": "banner"
+  },
+  {
+    "size": "square"
+  }
 ]
