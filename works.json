@@ -2,43 +2,52 @@
   {
     "image": "/images/work-1.jpg",
     "alt": "Describe work 1",
+    "category": "Branding",
     "size": "wide"
   },
   {
     "image": "/images/work-2.jpg",
     "alt": "Describe work 2",
+    "category": "Branding",
     "size": "square"
   },
   {
     "image": "/images/work-4.jpg",
     "alt": "Describe work 4",
+    "category": "Branding",
     "size": "wide"
   },
   {
     "image": "/images/work-5.jpg",
     "alt": "Describe work 5",
+    "category": "Illustration",
     "size": "square"
   },
   {
     "image": "/images/work-6.jpg",
     "alt": "Describe work 6",
+    "category": "Illustration",
     "size": "square"
   },
   {
     "image": "/images/work-8-1.jpg",
     "alt": "HellaCool",
+    "category": "Illustration",
     "size": "square"
   },
   {
     "image": "/images/Working Hours.png",
+    "category": "Animation",
     "size": "square"
   },
   {
     "image": "/images/logo.png",
+    "category": "Animation",
     "size": "square"
   },
   {
     "image": "/images/3 AC - Carousel - Plaster Stone Finish - Image 1.png",
+    "category": "Animation",
     "size": "wide"
   },
   {
