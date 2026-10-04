@@ -31,7 +31,7 @@ content:
         label: Category
         type: select
         options:
-          values: [Branding, Illustration, Animation, Other]
+          values: [Social Media, AI Assisted, Illustrations, Photoshop, Branding, Other]
       - name: year
         label: Year
         type: number
