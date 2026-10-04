@@ -3,18 +3,21 @@
     "image": "/images/work-1.jpg",
     "alt": "Describe work 1",
     "category": "Branding",
+    "year": 2021,
     "size": "wide"
   },
   {
     "image": "/images/work-2.jpg",
     "alt": "Describe work 2",
     "category": "Branding",
+    "year": 2025,
     "size": "square"
   },
   {
     "image": "/images/work-4.jpg",
     "alt": "Describe work 4",
     "category": "Branding",
+    "year": 2030,
     "size": "wide"
   },
   {
