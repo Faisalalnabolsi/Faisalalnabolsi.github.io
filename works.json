@@ -10,11 +10,6 @@
     "size": "square"
   },
   {
-    "image": "/images/work-3.gif",
-    "alt": "Describe work 3",
-    "size": "square"
-  },
-  {
     "image": "/images/work-4.jpg",
     "alt": "Describe work 4",
     "size": "square"
@@ -30,16 +25,12 @@
     "size": "square"
   },
   {
-    "image": "/images/work-7.gif",
-    "alt": "Describe work 7",
-    "size": "wide"
-  },
-  {
     "image": "/images/work-8-1.jpg",
     "alt": "HellaCool",
-    "size": "banner"
+    "size": "square"
   },
   {
+    "image": "/images/Working Hours.png",
     "size": "square"
   }
 ]
