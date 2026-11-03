@@ -31,9 +31,10 @@
   <dialog id="viewer">
     <div class="vbox">
       <button class="vbtn vclose" id="vclose" aria-label="Close">&times;</button>
-      <button class="vbtn vprev" id="vprev" aria-label="Previous image">&#8249;</button>
+      <button class="vbtn vprev" id="vprev" aria-label="Previous">&#8249;</button>
       <img id="vimg" alt="">
-      <button class="vbtn vnext" id="vnext" aria-label="Next image">&#8250;</button>
+      <iframe id="vvid" class="vvid" hidden allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Video"></iframe>
+      <button class="vbtn vnext" id="vnext" aria-label="Next">&#8250;</button>
       <p class="vcap" id="vcap"></p>
     </div>
   </dialog>
@@ -53,15 +54,45 @@
       if (s.youtube_url) { $('yt').href = s.youtube_url; $('yt').target = '_blank'; $('yt').rel = 'noopener'; }
     }).catch(() => {});
 
-    // ----- Full-size viewer -----
-    const viewer = $('viewer'), vimg = $('vimg');
+    // ----- Turn a YouTube / Vimeo link into an embeddable player -----
+    function parseVideo(link) {
+      try {
+        const u = new URL(link), h = u.hostname.replace(/^www\./, '');
+        const parts = u.pathname.split('/').filter(Boolean);
+        if (h === 'youtu.be' || h.endsWith('youtube.com')) {
+          let id = h === 'youtu.be' ? parts[0] : u.searchParams.get('v');
+          if (!id && ['shorts', 'embed', 'live'].includes(parts[0])) id = parts[1];
+          if (!id) return null;
+          return { embed: 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1',
+                   thumb: 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg' };
+        }
+        if (h === 'vimeo.com' || h === 'player.vimeo.com') {
+          const id = parts.find(p => /^\d+$/.test(p));
+          if (!id) return null;
+          const hash = parts[parts.indexOf(id) + 1];
+          return { embed: 'https://player.vimeo.com/video/' + id + (hash && /^[0-9a-f]+$/i.test(hash) ? '?h=' + hash + '&autoplay=1' : '?autoplay=1'),
+                   thumb: '' };
+        }
+      } catch (e) {}
+      return null;
+    }
+
+    // ----- Full-size viewer (images and videos) -----
+    const viewer = $('viewer'), vimg = $('vimg'), vvid = $('vvid');
     let cur = [], idx = 0;
-    function show(i) { idx = (i + cur.length) % cur.length; vimg.src = cur[idx]; }
-    function openViewer(w, imgs) {
-      cur = imgs;
+    function show(i) {
+      idx = (i + cur.length) % cur.length;
+      const s = cur[idx];
+      vvid.hidden = !s.v;
+      vimg.hidden = !!s.v;
+      vvid.src = s.v || 'about:blank';
+      if (!s.v) vimg.src = s.i;
+    }
+    function openViewer(w, slides) {
+      cur = slides;
       vimg.alt = w.alt || '';
       $('vcap').textContent = [w.alt, w.category, w.year].filter(Boolean).join(' · ');
-      $('vprev').hidden = $('vnext').hidden = imgs.length < 2;
+      $('vprev').hidden = $('vnext').hidden = slides.length < 2;
       show(0);
       viewer.showModal();
     }
@@ -69,6 +100,7 @@
     $('vprev').onclick = () => show(idx - 1);
     $('vnext').onclick = () => show(idx + 1);
     $('vclose').onclick = () => viewer.close();
+    viewer.addEventListener('close', () => { vvid.src = 'about:blank'; }); // stops the video
     viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
     document.addEventListener('keydown', e => {
       if (!viewer.open || cur.length < 2) return;
@@ -80,16 +112,21 @@
     const grid = $('grid');
     load('works.json').then(works => {
       works.forEach(w => {
-        const imgs = [w.image].concat(w.more_images || []).filter(Boolean);
+        const vid = w.video_url ? parseVideo(w.video_url) : null;
+        const cover = w.image || (vid && vid.thumb) || '';
+        // Slides: the video first (if any), otherwise the main image, then any extra images
+        const slides = (vid ? [{ v: vid.embed }] : (w.image ? [{ i: w.image }] : []))
+          .concat([].concat(w.more_images || []).filter(Boolean).map(i => ({ i })));
+
         const frame = document.createElement('button');
-        frame.className = 'frame' + (SIZES.includes(w.size) ? ' ' + w.size : '');
+        frame.className = 'frame' + (SIZES.includes(w.size) ? ' ' + w.size : '') + (vid ? ' hasvideo' : '');
         frame.dataset.category = w.category || '';
         const img = document.createElement('img');
         img.alt = w.alt || '';
         img.onerror = () => frame.classList.add('empty');
-        if (imgs.length) img.src = imgs[0]; else frame.classList.add('empty');
+        if (cover) img.src = cover; else frame.classList.add('empty');
         frame.appendChild(img);
-        frame.onclick = () => { if (!frame.classList.contains('empty')) openViewer(w, imgs); };
+        frame.onclick = () => { if (slides.length && !frame.classList.contains('empty')) openViewer(w, slides); };
         grid.appendChild(frame);
       });
 

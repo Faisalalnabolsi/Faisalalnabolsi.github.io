@@ -27,6 +27,10 @@ content:
       - name: alt
         label: Description
         type: string
+      - name: video_url
+        label: Video link (YouTube or Vimeo)
+        type: string
+        description: Optional. Paste the link from the video's page.
       - name: category
         label: Category
         type: select
