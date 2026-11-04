@@ -8,6 +8,15 @@ media:
       label: Optimize images
       workflow: pages-cms-media-action.yml
 content:
+  - name: taglist
+    label: Tags
+    type: collection
+    path: tags
+    format: json
+    fields:
+      - name: title
+        label: Tag name
+        type: string
   - name: works
     label: Portfolio works
     type: file
@@ -33,10 +42,14 @@ content:
         description: Optional. Paste the link from the video's page.
       - name: tags
         label: Tags
-        type: string
-        list: true
-        description: Add as many tags as you like. Use the same spelling each time.
-
+        type: reference
+        description: Pick one or more tags. To make a new tag, add it first in the Tags section.
+        options:
+          collection: taglist
+          multiple: true
+          search: title
+          value: "{primary}"
+          label: "{primary}"
       - name: year
         label: Year
         type: number
