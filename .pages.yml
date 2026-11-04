@@ -31,8 +31,13 @@ content:
         label: Video link (YouTube or Vimeo)
         type: string
         description: Optional. Paste the link from the video's page.
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+        description: Add as many tags as you like. Use the same spelling each time.
       - name: category
-        label: Category
+        label: Category (old, move into Tags)
         type: select
         options:
           values: [Social Media, AI Assisted, Illustrations, Photoshop, Branding, Other]
