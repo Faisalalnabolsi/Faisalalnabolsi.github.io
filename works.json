@@ -1,49 +1,7 @@
 [
   {
-    "image": "/images/work-1.jpg",
-    "alt": "Describe work 1",
-    "tags": [
-      "Motion",
-      "Social Media"
-    ],
-    "year": 2021,
-    "size": "wide"
-  },
-  {
-    "image": "/images/work-2.jpg",
-    "alt": "Describe work 2",
-    "tags": [
-      "Social Media"
-    ],
-    "year": 2025,
+    "image": "/images/3 AC - Carousel - Plaster Stone Finish - Image 1.png",
+    "alt": "A Social media post for AmanCrete, a Concrete and Industrial Plaster company.",
     "size": "square"
-  },
-  {
-    "image": "/images/work-4.jpg",
-    "alt": "Describe work 4",
-    "tags": [
-      "AI Assisted"
-    ],
-    "year": 2030,
-    "size": "wide"
-  },
-  {
-    "image": "/images/Jazal - December - 2 A.png",
-    "tags": [
-      "Motion"
-    ],
-    "size": "square"
-  },
-  {
-    "image": "/images/Badge - Media.png",
-    "video_url": "https://www.youtube.com/watch?v=YLLV1EZN71E",
-    "tags": [
-      "Social Media"
-    ],
-    "size": "banner"
-  },
-  {
-    "image": "/images/Badge - Media.png",
-    "size": "wide"
   }
 ]
