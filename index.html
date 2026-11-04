@@ -107,11 +107,18 @@
       if (e.key === 'ArrowRight') show(idx + 1);
       if (e.key === 'ArrowLeft') show(idx - 1);
     });
-
+    
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
     // ----- Grid -----
     const grid = $('grid');
     load('works.json').then(works => {
-      works.forEach(w => {
+     shuffle([...works]).forEach(w => {
         const vid = w.video_url ? parseVideo(w.video_url) : null;
         const cover = w.image || (vid && vid.thumb) || '';
         // Slides: the video first (if any), otherwise the main image, then any extra images
