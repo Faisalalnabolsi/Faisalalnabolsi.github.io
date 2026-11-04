@@ -2,6 +2,9 @@
   {
     "image": "/images/work-1.jpg",
     "alt": "Describe work 1",
+    "tags": [
+      "Motion"
+    ],
     "category": "Branding",
     "year": 2021,
     "size": "wide"
