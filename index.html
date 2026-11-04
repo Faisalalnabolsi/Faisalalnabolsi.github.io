@@ -46,7 +46,12 @@
 
     // Tags: a work can have many. The old single "category" is treated as one more tag.
     const norm = t => String(t).trim().toLowerCase();
-    const tagsOf = w => [].concat(w.tags || [], w.category || []).map(t => String(t).trim()).filter(Boolean);
+    const tagText = t => {
+  const s = String(t).trim();
+  const m = s.match(/([^\/]+)\.(json|ya?ml|md)$/i); // a file path such as tags/branding.json
+  return m ? m[1].replace(/[-_]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : s;
+};
+const tagsOf = w => [].concat(w.tags || [], w.category || []).map(tagText).filter(Boolean);
 
     // ----- Site info -----
     load('site.json').then(s => {
