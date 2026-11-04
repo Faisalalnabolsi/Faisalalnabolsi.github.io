@@ -20,16 +20,25 @@
   {
     "image": "/images/work-4.jpg",
     "alt": "Describe work 4",
+    "tags": [
+      "AI Assisted"
+    ],
     "year": 2030,
     "size": "wide"
   },
   {
     "image": "/images/Jazal - December - 2 A.png",
+    "tags": [
+      "Motion"
+    ],
     "size": "square"
   },
   {
     "image": "/images/Badge - Media.png",
     "video_url": "https://www.youtube.com/watch?v=YLLV1EZN71E",
+    "tags": [
+      "Social Media"
+    ],
     "size": "banner"
   },
   {
