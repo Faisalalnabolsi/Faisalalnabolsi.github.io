@@ -36,11 +36,7 @@ content:
         type: string
         list: true
         description: Add as many tags as you like. Use the same spelling each time.
-      - name: category
-        label: Category (old, move into Tags)
-        type: select
-        options:
-          values: [Social Media, AI Assisted, Illustrations, Photoshop, Branding, Other]
+
       - name: year
         label: Year
         type: number
