@@ -1,3 +1,3 @@
 {
-  "title": "Social MEdia"
+  "title": "Social Media"
 }
