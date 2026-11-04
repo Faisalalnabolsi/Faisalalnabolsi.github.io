@@ -5,33 +5,31 @@
     "tags": [
       "Motion"
     ],
-    "category": "Branding",
     "year": 2021,
     "size": "wide"
   },
   {
     "image": "/images/work-2.jpg",
     "alt": "Describe work 2",
-    "category": "Branding",
+    "tags": [
+      "Social Media"
+    ],
     "year": 2025,
     "size": "square"
   },
   {
     "image": "/images/work-4.jpg",
     "alt": "Describe work 4",
-    "category": "Branding",
     "year": 2030,
     "size": "wide"
   },
   {
     "image": "/images/Jazal - December - 2 A.png",
-    "category": "Illustrations",
     "size": "square"
   },
   {
     "image": "/images/Badge - Media.png",
     "video_url": "https://www.youtube.com/watch?v=YLLV1EZN71E",
-    "category": "Photoshop",
     "size": "banner"
   },
   {
