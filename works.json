@@ -1,16 +1,7 @@
 [
   {
-    "image": "/images/3 AC - Carousel - Plaster Stone Finish - Image 1.png",
-    "alt": "A Social media post for AmanCrete, a Concrete and Industrial Plaster company, created using a location photography, Photostop and AI edits",
-    "tags": [
-      "AI Assisted",
-      "Photoshop"
-    ],
-    "size": "square"
-  },
-  {
     "image": "/images/Arch Mockup - Round 3.jpg",
-    "alt": "A hallway arch made for an even in Qatar called (Fables in Fashion)",
+    "alt": "Hallway Arch Designed for (Fables in Fashion) event in Qatar.",
     "tags": [
       "Photoshop",
       "Illustrator",
@@ -20,7 +11,7 @@
   },
   {
     "image": "/images/Arch Mockup - Straight 2.jpg",
-    "alt": "A hallway arch made for an even in Qatar called (Fables in Fashion)",
+    "alt": "Hallway Arch Designed for (Fables in Fashion) event in Qatar.",
     "tags": [
       "Events Production (Qatar)",
       "Photoshop",
@@ -30,7 +21,7 @@
   },
   {
     "image": "/images/Arch Mockup.jpg",
-    "alt": "A hallway arch made for an even in Qatar called (Fables in Fashion)",
+    "alt": "Hallway Arch Designed for (Fables in Fashion) event in Qatar.",
     "tags": [
       "Events Production (Qatar)",
       "Photoshop",
@@ -91,7 +82,7 @@
       "Illustrator",
       "Photoshop"
     ],
-    "size": "banner"
+    "size": "wide"
   },
   {
     "image": "/images/Misc 1.png",
@@ -122,7 +113,8 @@
       "Events Production (Qatar)",
       "Branding",
       "Illustrator",
-      "Photoshop"
+      "Photoshop",
+      "AI Assisted"
     ],
     "size": "wide"
   },
@@ -157,7 +149,7 @@
       "Illustrator",
       "Photoshop"
     ],
-    "size": "big"
+    "size": "wide"
   },
   {
     "image": "/images/Wall Banners - Central Foyer Level 1- Right Side.png",
@@ -168,7 +160,7 @@
       "Illustrator",
       "Photoshop"
     ],
-    "size": "big"
+    "size": "wide"
   },
   {
     "image": "/images/Stage 10 Edits - Theme 1.jpg",
@@ -226,6 +218,285 @@
     "size": "banner"
   },
   {
+    "image": "/images/Badge and Tent.png",
+    "alt": "Reservation Cards, Badges and Lanyards designed for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Counter and invitation.png",
+    "alt": "Regestration Counter and Digital Invitation designed for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Envelope A.png",
+    "alt": "Participants Envelope and A3 Invitation designed for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Stage and Media.png",
+    "alt": "Media Backdrop and Presentation Stage designed for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O1-01.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O1-02.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/QSB - O1-03.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O1-04.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O1-05.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/QSB - O2b-01.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O2b-02.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O2b-03.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/QSB - O2b-04.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/QSB - O2b-05.png",
+    "alt": "Stage Screen Presentation Design for (Ministry of Finance in Qatar)",
+    "tags": [
+      "Events Production (Qatar)",
+      "Illustrator"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Wayfindings (2).png",
+    "alt": "Wayfinding Signs Designed for (Fables in Fashion) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Wayfindings_Books.png",
+    "alt": "Wayfinding Signs Designed for (Fables in Fashion) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop",
+      "AI Assisted"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Wayfinding.png",
+    "alt": "Wayfinding Signs Designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Flags (2).png",
+    "alt": "Outdoor Flags designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "banner"
+  },
+  {
+    "image": "/images/Media Kit Mockup.jpg",
+    "alt": "Media Kit designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Harris Fence 2.png",
+    "alt": "Perimeter Fence designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Harris Fence.png",
+    "alt": "Divider Fences designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Stands.png",
+    "alt": "Outdoors Decorations and Props designed for (Doha Outdoors) event in Qatar.",
+    "tags": [
+      "AI Assisted",
+      "Branding",
+      "Events Production (Qatar)",
+      "Photoshop",
+      "Illustrator"
+    ],
+    "size": "banner"
+  },
+  {
+    "image": "/images/eSim Package-02.jpg",
+    "alt": "Tourist Giveaway Package designer for (Visit Qatar)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Events Production (Qatar)",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/eSim Package-06b.jpg",
+    "alt": "Tourist Giveaway Package designer for (Visit Qatar)",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/eSim Package-03.jpg",
+    "alt": "Tourist Giveaway Package designer for (Visit Qatar)",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/eSim Package-03.jpg",
+    "alt": "Tourist Giveaway Package designer for (Visit Qatar)",
+    "tags": [
+      "Branding",
+      "Events Production (Qatar)",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-8.jpg",
+    "alt": "A Social media post for (AmanCrete) a Concrete and Industrial Plaster company, created using a AI and Photostop.",
+    "size": "square"
+  },
+  {
+    "image": "/images/3 AC - Carousel - Plaster Stone Finish - Image 1.png",
+    "alt": "A Social media post for (AmanCrete) a Concrete and Industrial Plaster company, created using a AI and Photostop.",
+    "tags": [
+      "AI Assisted",
+      "Photoshop"
+    ],
     "size": "square"
   }
 ]
