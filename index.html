@@ -44,6 +44,10 @@
     const load = f => fetch(f, { cache: 'no-cache' }).then(r => { if (!r.ok) throw 0; return r.json(); });
     const SIZES = ['wide', 'tall', 'big', 'banner'];
 
+    // Tags: a work can have many. The old single "category" is treated as one more tag.
+    const norm = t => String(t).trim().toLowerCase();
+    const tagsOf = w => [].concat(w.tags || [], w.category || []).map(t => String(t).trim()).filter(Boolean);
+
     // ----- Site info -----
     load('site.json').then(s => {
       if (s.name) { $('name').textContent = s.name; document.title = s.name + ' – Portfolio'; }
@@ -92,7 +96,7 @@
     function openViewer(w, slides) {
       cur = slides;
       vimg.alt = w.alt || '';
-      $('vcap').textContent = [w.alt, w.category, w.year].filter(Boolean).join(' · ');
+      $('vcap').textContent = [w.alt, ...tagsOf(w), w.year].filter(Boolean).join(' · ');
       $('vprev').hidden = $('vnext').hidden = slides.length < 2;
       show(0);
       viewer.showModal();
@@ -136,26 +140,27 @@
         if (cover) img.src = cover; else frame.classList.add('empty');
         frame.appendChild(img);
         frame.onclick = () => { if (slides.length && !frame.classList.contains('empty')) openViewer(w, slides); };
-        return { w, frame };
+        return { w, frame, keys: new Set(tagsOf(w).map(norm)) };
       });
 
-      // The main ("All") view is shuffled on every page load; category views keep works.json order.
+      // The main ("All") view is shuffled on every page load; tag views keep works.json order.
       const shuffled = shuffle([...items]);
       const place = list => list.forEach(it => grid.appendChild(it.frame)); // appendChild also re-orders
       place(shuffled);
 
-      // Category filter buttons (only shown if there are 2+ categories in use)
-      const cats = [...new Set(works.map(w => w.category).filter(Boolean))];
-      if (cats.length > 1) {
+      // Tag buttons: every different tag used by any work (capitals and spaces are ignored when matching)
+      const labels = new Map();
+      works.forEach(w => tagsOf(w).forEach(t => { if (!labels.has(norm(t))) labels.set(norm(t), t); }));
+      if (labels.size > 1) {
         const nav = $('filters');
-        ['All', ...cats].forEach((c, i) => {
+        [[null, 'All'], ...labels].forEach(([key, label], i) => {
           const b = document.createElement('button');
-          b.textContent = c;
+          b.textContent = label;
           if (i === 0) b.className = 'on';
           b.onclick = () => {
             nav.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
-            place(i === 0 ? shuffled : items);
-            items.forEach(it => { it.frame.hidden = i > 0 && it.w.category !== c; });
+            place(key === null ? shuffled : items);
+            items.forEach(it => { it.frame.hidden = key !== null && !it.keys.has(key); });
           };
           nav.appendChild(b);
         });
