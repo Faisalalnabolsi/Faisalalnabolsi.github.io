@@ -1619,7 +1619,7 @@
     "size": "wide"
   },
   {
-    "image": "/images/Van D Small.png",
+    "image": "/images/almazraa-vans.png",
     "alt": "Van Sticker Design for (AlMazra'a)",
     "tags": [
       "Branding",
@@ -1629,32 +1629,12 @@
     "size": "wide"
   },
   {
-    "image": "/images/work-1.jpg",
-    "alt": "Social Media post for (Sheen Restaurant)",
-    "tags": [
-      "Illustrator",
-      "Photoshop",
-      "Social Media"
-    ],
-    "size": "big"
-  },
-  {
-    "image": "/images/work-10.jpg",
-    "alt": "Sidewalk A-board sign for (Sheen Restaurant)",
+    "image": "/images/Van D Small.png",
+    "alt": "Van Sticker Design for (AlMazra'a)",
     "tags": [
       "Branding",
       "Illustrator",
       "Photoshop"
-    ],
-    "size": "tall"
-  },
-  {
-    "image": "/images/work-9.jpg",
-    "alt": "Social Media post for (Sheen Restaurant)",
-    "tags": [
-      "Illustrator",
-      "Photoshop",
-      "Social Media"
     ],
     "size": "wide"
   },
@@ -1697,5 +1677,85 @@
       "AI Assisted"
     ],
     "size": "wide"
+  },
+  {
+    "image": "/images/work-1.jpg",
+    "alt": "Social Media post for (Sheen Restaurant)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "big"
+  },
+  {
+    "image": "/images/work-10.jpg",
+    "alt": "Sidewalk A-board sign for (Sheen Restaurant)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "tall"
+  },
+  {
+    "image": "/images/work-9.jpg",
+    "alt": "Social Media post for (Sheen Restaurant)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/sheen-closing-day-a-lq.png",
+    "alt": "Social Media post for (Sheen Restaurant)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/challenge-2-front-lq.png",
+    "alt": "Social Media Post for (Hive Gym)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "big"
+  },
+  {
+    "image": "/images/kinz-pasta-1-diagonal-red-bg.png",
+    "alt": "Packaging Design for new Pasta Brand (Kinz)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/kinz-pasta-2-diagonal-blue-bg.png",
+    "alt": "Packaging Design for new Pasta Brand (Kinz)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/kinz-pasta-3-diagonal.png",
+    "alt": "Packaging Design for new Pasta Brand (Kinz)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "square"
   }
 ]
