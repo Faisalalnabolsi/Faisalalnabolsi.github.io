@@ -57,14 +57,15 @@
     const thumbOf = src => String(src).replace(/^(\/?)images\//, '$1thumbs/');
 
     // ----- Site info -----
-    load('site.json').then(s => {
+    const sitePromise = load('site.json').catch(() => ({}));
+    sitePromise.then(s => {
       if (s.name) { $('name').textContent = s.name; document.title = s.name + ' – Portfolio'; }
       if (s.tagline) $('tagline').textContent = s.tagline;
       if (s.email) { $('email').textContent = s.email; $('email').href = 'mailto:' + s.email; }
       if (s.about) { $('about').textContent = s.about; $('about').hidden = false; }
       if (s.youtube_label) $('ytlabel').textContent = s.youtube_label;
       if (s.youtube_url) { $('yt').href = s.youtube_url; $('yt').target = '_blank'; $('yt').rel = 'noopener'; }
-    }).catch(() => {});
+    });
 
     // ----- Turn a YouTube / Vimeo link into an embeddable player -----
     function parseVideo(link) {
@@ -162,7 +163,7 @@
     }
 
     const grid = $('grid');
-    load('works.json').then(works => {
+    Promise.all([load('works.json'), sitePromise]).then(([works, site]) => {
       // Build every frame once, in the order of works.json
       const items = works.map(w => {
         const vid = w.video_url ? parseVideo(w.video_url) : null;
@@ -189,6 +190,9 @@
 
       // The main ("All") view is shuffled on every page load; tag views keep works.json order.
       const shuffled = shuffle([...items]);
+      // Tags chosen under "Site info" in Pages CMS are shuffled too (once per page load); the rest stay in order.
+      const shuffleKeys = new Set([].concat(site.shuffle_tags || []).map(t => norm(tagText(t))));
+      const tagOrder = new Map();
       const place = list => list.forEach(it => grid.appendChild(it.frame)); // appendChild also re-orders
       place(shuffled);
 
@@ -208,7 +212,13 @@
           if (i === 0) b.className = 'on';
           b.onclick = () => {
             nav.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
-            place(key === null ? shuffled : items);
+            let order = items;
+            if (key === null) order = shuffled;
+            else if (shuffleKeys.has(key)) {
+              if (!tagOrder.has(key)) tagOrder.set(key, shuffle([...items]));
+              order = tagOrder.get(key);
+            }
+            place(order);
             items.forEach(it => { it.frame.hidden = key !== null && !it.keys.has(key); });
           };
           nav.appendChild(b);
