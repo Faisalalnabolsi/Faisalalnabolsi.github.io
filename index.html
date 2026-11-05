@@ -93,13 +93,29 @@
     // ----- Full-size viewer (images and videos) -----
     const viewer = $('viewer'), vimg = $('vimg'), vvid = $('vvid');
     let cur = [], idx = 0;
+    function showImage(s) {
+      const pre = new Image();
+      pre.src = s.i;
+      // Already downloaded (background loading done)? Show the full image straight away.
+      if (pre.complete && pre.naturalWidth) { vimg.src = s.i; return; }
+      // Otherwise show the small copy instantly, then swap to the full image when it has loaded.
+      vimg.src = thumbOf(s.i);
+      pre.onload = () => { if (cur[idx] === s) vimg.src = s.i; };
+    }
+    // If a thumbnail is missing, use the original instead
+    vimg.onerror = () => {
+      const s = cur[idx];
+      if (s && s.i && vimg.getAttribute('src') !== s.i) vimg.src = s.i;
+    };
     function show(i) {
       idx = (i + cur.length) % cur.length;
       const s = cur[idx];
       vvid.hidden = !s.v;
       vimg.hidden = !!s.v;
       vvid.src = s.v || 'about:blank';
-      if (!s.v) vimg.src = s.i;
+      if (!s.v) showImage(s);
+      const n = cur[(idx + 1) % cur.length];            // get the next image ready
+      if (n && n.i) new Image().src = n.i;
     }
     function openViewer(w, slides) {
       cur = slides;
@@ -130,6 +146,21 @@
       return a;
     }
 
+    function preloadFull(list) {
+      const c = navigator.connection;
+      if (c && (c.saveData || /2g|3g/.test(c.effectiveType || ''))) return; // respect slow connections / data saver
+      const queue = list.map(it => it.slides[0]).filter(s => s && s.i).map(s => s.i);
+      const next = () => {
+        const src = queue.shift();
+        if (!src) return;
+        const im = new Image();
+        im.fetchPriority = 'low';
+        im.onload = im.onerror = next;
+        im.src = src;
+      };
+      next(); next(); // two at a time
+    }
+
     const grid = $('grid');
     load('works.json').then(works => {
       // Build every frame once, in the order of works.json
@@ -153,13 +184,18 @@
         if (cover) img.src = thumbOf(cover); else frame.classList.add('empty');
         frame.appendChild(img);
         frame.onclick = () => { if (slides.length && !frame.classList.contains('empty')) openViewer(w, slides); };
-        return { w, frame, keys: new Set(tagsOf(w).map(norm)) };
+        return { w, frame, slides, keys: new Set(tagsOf(w).map(norm)) };
       });
 
       // The main ("All") view is shuffled on every page load; tag views keep works.json order.
       const shuffled = shuffle([...items]);
       const place = list => list.forEach(it => grid.appendChild(it.frame)); // appendChild also re-orders
       place(shuffled);
+
+      // After the page and its thumbnails have loaded, quietly download the full-size images
+      // in the background (two at a time, low priority) so they open instantly.
+      const go = () => setTimeout(() => preloadFull(shuffled), 800);
+      if (document.readyState === 'complete') go(); else addEventListener('load', go);
 
       // Tag buttons: every different tag used by any work (capitals and spaces are ignored when matching)
       const labels = new Map();
