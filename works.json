@@ -277,7 +277,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "square"
+    "size": "wide"
   },
   {
     "image": "/images/QSB - O1-03.png",
@@ -295,7 +295,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "wide"
+    "size": "banner"
   },
   {
     "image": "/images/QSB - O1-05.png",
@@ -304,7 +304,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "square"
+    "size": "banner"
   },
   {
     "image": "/images/QSB - O2b-01.png",
@@ -313,7 +313,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "wide"
+    "size": "banner"
   },
   {
     "image": "/images/QSB - O2b-02.png",
@@ -322,7 +322,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "wide"
+    "size": "banner"
   },
   {
     "image": "/images/QSB - O2b-03.png",
@@ -331,7 +331,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "square"
+    "size": "wide"
   },
   {
     "image": "/images/QSB - O2b-04.png",
@@ -340,7 +340,7 @@
       "Events Production (Qatar)",
       "Illustrator"
     ],
-    "size": "wide"
+    "size": "banner"
   },
   {
     "image": "/images/QSB - O2b-05.png",
@@ -394,7 +394,7 @@
       "Illustrator",
       "Photoshop"
     ],
-    "size": "banner"
+    "size": "wide"
   },
   {
     "image": "/images/Media Kit Mockup.jpg",
@@ -702,7 +702,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "tall"
   },
   {
     "image": "/images/Slide 3 A-01.png",
@@ -1755,6 +1755,81 @@
       "Branding",
       "Illustrator",
       "Photoshop"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/28-c.png",
+    "alt": "Social Media Post for (AlBayader Frozen Foods)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/34.png",
+    "alt": "Social Media Post for (AlBayader Frozen Foods)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/3-11.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/stories-5.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/stories-7.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "size": "tall"
+  },
+  {
+    "image": "/images/11-5.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "tall"
+  },
+  {
+    "image": "/images/zaytoon-posts-1.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/9.png",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "AI Assisted",
+      "Photoshop",
+      "Social Media"
     ],
     "size": "square"
   }
