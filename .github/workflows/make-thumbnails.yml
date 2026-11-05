@@ -1,0 +1,56 @@
+name: Make thumbnails
+on:
+  push:
+    branches: [main]
+    paths: ['images/**']
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild every thumbnail
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: thumbnails
+
+jobs:
+  thumbs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y imagemagick gifsicle
+      - name: Build thumbnails
+        env:
+          FORCE: ${{ inputs.force }}
+        run: |
+          mkdir -p thumbs
+          shopt -s nullglob nocaseglob
+          for f in images/*.{jpg,jpeg,png,gif,webp}; do
+            name=$(basename "$f")
+            out="thumbs/$name"
+            if [ -f "$out" ] && [ "$FORCE" != "true" ]; then continue; fi
+            case "${name,,}" in
+              *.gif) gifsicle -O3 --resize-fit-width 800 "$f" -o "$out" || echo "skipped $f" ;;
+              *) convert "$f" -auto-orient -resize '800x>' -strip -quality 82 "$out" || echo "skipped $f" ;;
+            esac
+          done
+          # remove thumbnails whose original image was deleted
+          for t in thumbs/*; do
+            [ -e "images/$(basename "$t")" ] || rm -f "$t"
+          done
+      - name: Save thumbnails
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A thumbs
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update thumbnails"
+            git pull --rebase
+            git push
+          fi
