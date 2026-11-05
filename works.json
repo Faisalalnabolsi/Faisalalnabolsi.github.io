@@ -819,7 +819,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Palestine Post.png",
@@ -828,7 +828,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Greeting-01.png",
@@ -837,7 +837,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Ramadan-01.png",
@@ -846,7 +846,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Slide 10-01.png",
@@ -864,7 +864,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Women's Day-01.png",
@@ -873,7 +873,7 @@
       "Illustrator",
       "Social Media"
     ],
-    "size": "square"
+    "size": "big"
   },
   {
     "image": "/images/Booklet page 04 Blue Background 4 LQ.png",
@@ -964,10 +964,6 @@
       "Social Media"
     ],
     "size": "square"
-  },
-  {
-    "image": "/images/Slide 3 1.png",
-    "size": "big"
   },
   {
     "image": "/images/Slide 8 New.png",
@@ -1115,6 +1111,15 @@
     "tags": [
       "Illustrator",
       "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/October 7th-01.png",
+    "alt": "Social Media post for (Cozy Pizza)",
+    "tags": [
+      "Illustrator",
       "Social Media"
     ],
     "size": "square"
@@ -1497,5 +1502,200 @@
       "Social Media"
     ],
     "size": "square"
+  },
+  {
+    "image": "/images/Jazal - December - 2 A.png",
+    "alt": "Social Media Post for (Jazal Real Estate Development)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "AI Assisted",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/work-5.jpg",
+    "alt": "Social Media Post for (Jazal Real Estate Development)",
+    "tags": [
+      "AI Assisted",
+      "Illustrator",
+      "Photoshop",
+      "Branding"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-6.jpg",
+    "alt": "Social Media Post for (Jazal Real Estate Development)",
+    "tags": [
+      "AI Assisted",
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/jazal-december-1-a.png",
+    "alt": "Social Media Post for (Jazal Real Estate Development)",
+    "tags": [
+      "AI Assisted",
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/jazal-hive-banner-2-lq.png",
+    "alt": "Ad Banner for (Jazal Real Estate Development)",
+    "tags": [
+      "AI Assisted",
+      "Illustrator",
+      "Photoshop",
+      "Branding"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/October - Offer-01.png",
+    "alt": "Social Media Post for (The Face Shop)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/Style 1-02.png",
+    "alt": "Social Media Post for (The Face Shop)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/Sweet Cheese Label - B2.png",
+    "alt": "Packaging design for (AlMazra'a)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Branding"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/Sweet Cheese Label - C2.png",
+    "alt": "Packaging design for (AlMazra'a)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/Van B Small.png",
+    "alt": "Van Sticker Design for (AlMazra'a)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Van C Small.png",
+    "alt": "Van Sticker Design for (AlMazra'a)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/Van D Small.png",
+    "alt": "Van Sticker Design for (AlMazra'a)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-1.jpg",
+    "alt": "Social Media post for (Sheen Restaurant)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "big"
+  },
+  {
+    "image": "/images/work-10.jpg",
+    "alt": "Sidewalk A-board sign for (Sheen Restaurant)",
+    "tags": [
+      "Branding",
+      "Illustrator",
+      "Photoshop"
+    ],
+    "size": "tall"
+  },
+  {
+    "image": "/images/work-9.jpg",
+    "alt": "Social Media post for (Sheen Restaurant)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-2.jpg",
+    "alt": "Social Media post for (AlBayader Frozen Foods)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/Working Hours.png",
+    "alt": "Social Media post for (AlBayader Frozen Foods)",
+    "tags": [
+      "Illustrator",
+      "Photoshop",
+      "Social Media"
+    ],
+    "size": "square"
+  },
+  {
+    "image": "/images/work-3.jpg",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "Photoshop",
+      "AI Assisted",
+      "Social Media"
+    ],
+    "size": "wide"
+  },
+  {
+    "image": "/images/work-4.jpg",
+    "alt": "AI Product Photography for (Turathi)",
+    "tags": [
+      "Photoshop",
+      "Social Media",
+      "AI Assisted"
+    ],
+    "size": "wide"
   }
 ]
