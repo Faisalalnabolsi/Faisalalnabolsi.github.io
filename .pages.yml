@@ -72,3 +72,13 @@ content:
       - { name: about, label: About text, type: text }
       - { name: youtube_url, label: YouTube link, type: string }
       - { name: youtube_label, label: Text under the YouTube icon, type: string }
+  - name: shuffle_tags
+        label: Tags that show in random order
+        type: reference
+        description: Pick the tags that should be shuffled on every visit. All other tags stay in your works-list order.
+        options:
+          collection: taglist
+          multiple: true
+          search: title
+          value: "{primary}"
+          label: "{primary}"
