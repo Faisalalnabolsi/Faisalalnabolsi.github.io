@@ -3,10 +3,6 @@ media:
   output: /images
   rename: safe
   extensions: [jpg, jpeg, png, gif, webp]
-  actions:
-    - name: optimize-images
-      label: Optimize images
-      workflow: pages-cms-media-action.yml
 content:
   - name: taglist
     label: Tags
