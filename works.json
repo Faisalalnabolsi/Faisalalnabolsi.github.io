@@ -1832,5 +1832,25 @@
       "Social Media"
     ],
     "size": "square"
+  },
+  {
+    "image": "/images/image.jpg",
+    "alt": "Bridge Banner Animation for (Hills - Dubai)",
+    "video_url": "https://www.youtube.com/watch?v=WhaaHzKgaEs&list=PL1ZHYZwcBOfFvAQSqyg3l2qTullron7pB&index=46",
+    "tags": [
+      "Illustrator",
+      "Motion"
+    ],
+    "size": "banner"
+  },
+  {
+    "image": "/images/image-a-2.jpg",
+    "alt": "Bridge Banner Animation for (Hills - Dubai)",
+    "video_url": "https://www.youtube.com/watch?v=HshwPkPqLmU&list=PL1ZHYZwcBOfFvAQSqyg3l2qTullron7pB&index=47",
+    "tags": [
+      "Illustrator",
+      "Motion"
+    ],
+    "size": "banner"
   }
 ]
